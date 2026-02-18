@@ -1,0 +1,22 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: api
+    image: creditwise-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dashboard
+    image: creditwise-dashboard
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
